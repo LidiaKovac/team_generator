@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strive Team Generator</title>
+        <link href="./index.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <span>
+            <input placeholder="Enter a name" id="name" type="text" />
+            <button onclick="addName()">Add Name</button>
+        </span>
+        <br>
+        <span>
+            <input placeholder="Enter the number of teams" id="teams" type="number" />
+            <button onclick="createTeams()">Create Teams</button>
+        </span>
+        <ul id="waitingList">
+
+        </ul>
+        <div class="teams__wrap">
+            
+        </div>
+        <button onclick="assign()">Assign</button>
+        <script src="index.js">
+
+        </script>
+    </body>
+
+</html>
