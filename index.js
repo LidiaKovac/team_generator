@@ -8,8 +8,8 @@ let ul = document.querySelector("ul#waitingList") //ul for the waiting list
 
 
 const addName = () => { //takes the name from the input and adds it to the list
-	let input = document.querySelector("input#name")
-	waitingList.push(input.value)
+	let input = document.querySelector("textarea#name").value.replaceAll("\n", "").split(",")
+	waitingList.push(...input)
 	input.value = "" //clears the input
 	renderWaitingList(waitingList)
 }
