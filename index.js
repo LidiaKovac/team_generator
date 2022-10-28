@@ -22,7 +22,7 @@ const renderWaitingList = (list /* array of names */) => { //renders a list of s
 	ul.innerHTML = ""
 	ul.classList.add("border--green")
 	for (const name of list) {
-		ul.innerHTML = `<li> ${name} </li>`
+		ul.innerHTML += `<li> ${name} </li>`
 		//ALTERNATIVE WAY
 		// let li = document.createElement("li")
 		// li.innerText = name
@@ -111,8 +111,10 @@ const assign = () => {
 			currentTeam = 0 //start from the first team again 
 		}
 		//this below happens in ALL cases
-		let randomStudent = waitingList[Math.floor(Math.random() * waitingList.length)] //randomize a student
-		waitingList = waitingList.filter((name) => name !== randomStudent) //remove it from the list
+		let ranNum = Math.floor(Math.random() * waitingList.length)
+		let randomStudent = waitingList[ranNum] //randomize a student
+		// waitingList = waitingList.filter((name) => name !== randomStudent) //ES6 <<= we still have not covered this, so I gave you an alternative: 
+		waitingList.splice(ranNum, 1)
 		let currentId = "#team_" + currentTeam.toString() //get the id of the team
 		let teamUl = document.querySelector(currentId) //retrieve the element
 		teamUl.classList.add("border--green")
