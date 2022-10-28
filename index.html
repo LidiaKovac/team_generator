@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Strive Team Generator</title>
-        <link href="./index.css" rel="stylesheet"/>
-    </head>
-    <body>
-        <span>
-            <textarea placeholder="Enter a name" id="name" type="text" ></textarea>
-            <button onclick="addName()">Add Name</button>
-        </span>
-        <br>
-        <span>
-            <input placeholder="Enter the number of teams" id="teams" type="number" />
-            <button onclick="createTeams()">Create Teams</button>
-        </span>
-        <ul id="waitingList">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPICODE Team Generator</title>
+    <!-- LINK TO IMPORT BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="./index.css" rel="stylesheet" />
+</head>
 
-        </ul>
-        <div class="teams__wrap">
-            
+<body>
+    <div class="generate__area">
+        <div class="split__input">
+            <input onkeyup="handleKeyEvent(event)" class="border--green bg--white" placeholder="Enter a name" id="name" type="text"></textarea>
+            <button class="border--green text--white text--bold" onclick="addName()">Add Name</button>
         </div>
-        <button onclick="assign()">Assign</button>
-        <script src="index.js">
+        <div class="teams__input">
+            <button class="plus__button" onclick="increaseTeams()"><i class="bi bi-plus-circle-fill"></i></button>
+            <div class="teams__amount">0</div>
+            <button class="minus__button" onclick="decreaseTeams()"><i class="bi bi-dash-circle-fill"></i></button>
 
-        </script>
-    </body>
+        </div>
+        <div class="util__btns">
+
+            <button id="assign" class="border--green text--white text--bold" onclick="assign()">Assign</button>
+            <button class="border--green text--white text--bold" onclick="reset()">Reset</button>
+            <button class="border--green text--white text--bold" onclick="preset()">Load preset (testing only)</button>
+        </div>
+
+        <!-- <button onclick="createTeams()">Create Teams</button> -->
+    </div>
+    <br>
+    <main>
+        <div class="waiting__list">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="teams__wrap">
+
+        </div>
+    </main>
+
+    <script src="index.js">
+
+    </script>
+</body>
 
 </html>

@@ -1,6 +1,169 @@
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: var(--ghost-white);
+}
+
+/* 
+Creating variables for colors: 
+More docs: 
+W3S: https://www.w3schools.com/css/css3_variables.asp
+MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+:root {
+    --ghost-white: #F7F7FF;
+    /* this is not plain white :D */
+    --golden-orange: #c03221;
+    --deep-champagne: #ffeed8;
+    --independence: #53A2BE;
+    --viridian: #3f826d;
+    --viridian-light: #b2d7cb;
+
+    --input-btn-size: 30px
+}
+
+/* UTILITY */
+
+.border--green {
+    border: 2px solid var(--viridian);
+}
+
+.bg--white {
+    background-color: var(--ghost-white);
+}
+
+.bg--green {
+    background-color: var(--viridian);
+}
+
+.bg--blue {
+    background-color: var(--independence);
+}
+
+.bg--red {
+    background-color: var(--golden-orange);
+}
+
+.text--white {
+    color: var(--ghost-white)
+}
+
+.text--bold {
+    font-weight: bold;
+}
+
+
+/* BUTTON AREA */
+
+.generate__area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+/* SPLIT ELEMENT => input+btn */
+.split__input {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.split__input input {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    padding-left: 20px;
+}
+
+.split__input button {
+    background-color: var(--viridian);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-right: 20px;
+}
+
+.split__input button:hover {
+    background-color: var(--independence);
+    border-color: var(--independence);
+    color: black
+}
+
+/* TEAMS COUNTER */
+
+.teams__input {
+    display: flex;
+    gap: 20px
+}
+
+.teams__input button {
+    width: var(--input-btn-size);
+    height: var(--input-btn-size);
+    font-size: var(--input-btn-size);
+    border-radius: 50px;
+    padding: 0px;
+    text-align: center;
+    border: none;
+    color: var(--viridian);
+
+}
+
+.teams__input button:hover {
+    color: var(--independence)
+}
+
+.teams__amount {
+    font-size: var(--input-btn-size);
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.waiting__list {
+    flex: 1 1 200px;
+}
+
+.teams__wrap {
+    flex: 2 1 200px;
+}
+
+/* LISTS */
+
+ul {
+    border-radius: 20px;
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+ul li {
+    list-style-type: none;
+    height: 50px;
+    border-bottom: 1px solid var(--viridian-light);
+    /* border-bottom: 1px solid var(--viridian-light); */
+
+    padding-left: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+li:hover {
+    background-color: var(--deep-champagne);
+}
+
+
+li:last-of-type {
+    border: none
+}
+
+/* TEAMS */
 
 .teams__wrap {
     display: flex;
@@ -10,21 +173,47 @@
 }
 
 .team__single {
-    width: 300px;
-    height: 500px;
-    margin-bottom: 30px;
-    padding: 30px
-}
-button, input {
-    width: 200px;
-    height: 40px;
-    background-color: #97D2FB;
-    border: none;
-    border-radius: 50px;
-    margin: 10px
+    flex: 1 1 300px;
+    max-width: 300px;
+    /* min-height: 300px; */
+    /* margin-bottom: 30px; */
+    padding: 10px
 }
 
-input {
-    background-color: #ECCBD9;
-    padding-left: 20px;
+.team__single ul {
+    min-height: 100px;
+}
+
+/* UTIL BUTTONS SECTION */
+
+.util__btns button {
+    background-color: var(--viridian);
+    border-radius: 50px;
+    min-width: 90px;
+}
+
+.util__btns button:hover {
+    background-color: var(--ghost-white);
+    /* border-color: var(--independence); */
+    color: black
+}
+
+/* COMMON */
+
+input,
+button {
+    height: 50px;
+    margin: 0px !important;
+    transition: .2s;
+}
+
+button:disabled {
+    background-color: var(--viridian-light);
+    border-color: var(--viridian-light);
+    cursor: not-allowed;
+}
+button:disabled:hover {
+    background-color: var(--viridian-light);
+    border-color: var(--viridian-light);
+    color: white
 }
